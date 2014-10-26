@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="idmmodel" nsURI="http://www.ufrj.ppgi.br/idmmodel" nsPrefix="idmmodel">
+  <eSubpackages name="core">
+    <eClassifiers xsi:type="ecore:EClass" name="User" eSuperTypes="#//core/BasicEntity #//core/Entity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true" interface="true">
+      <eOperations name="getId" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Long"/>
+      <eOperations name="getName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+      <eOperations name="getStatus" eType="#//core/EntityStatus"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Organization" eSuperTypes="#//core/BasicEntity #//core/Entity"/>
+    <eClassifiers xsi:type="ecore:EEnum" name="EntityStatus">
+      <eLiterals name="ACTIVE" value="1" literal="ACTIVE"/>
+      <eLiterals name="INACTIVE" literal="INACTIVE"/>
+      <eLiterals name="DELETED" value="-1" literal="DELETED"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BasicEntity" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Long"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//core/EntityStatus"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

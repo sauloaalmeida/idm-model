@@ -1,4 +1,4 @@
 idm-model
 =========
 
-repository used in the software engineering subject at master degree course at UFRJ PPGI
+repository used in the software engineering subject of my master degree course at UFRJ PPGI
