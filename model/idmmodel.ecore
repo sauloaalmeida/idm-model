@@ -8,7 +8,10 @@
       <eOperations name="getName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
       <eOperations name="getStatus" eType="#//core/EntityStatus"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Organization" eSuperTypes="#//core/BasicEntity #//core/Entity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Organization" eSuperTypes="#//core/BasicEntity #//core/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentOrganization" lowerBound="1"
+          upperBound="-1" eType="#//core/Organization" containment="true"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="EntityStatus">
       <eLiterals name="ACTIVE" value="1" literal="ACTIVE"/>
       <eLiterals name="INACTIVE" literal="INACTIVE"/>
