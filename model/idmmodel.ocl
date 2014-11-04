@@ -1,0 +1,9 @@
+import 'idmmodel.ecore'
+
+package idmmodel
+
+context UserOrganization
+inv invariant_UserOrganizationDateValidation :
+	self.endDate.isAfter(Date::now)
+
+endpackage

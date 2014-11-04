@@ -11,17 +11,46 @@
         <genEnumLiterals ecoreEnumLiteral="idmmodel.ecore#//core/EntityStatus/INACTIVE"/>
         <genEnumLiterals ecoreEnumLiteral="idmmodel.ecore#//core/EntityStatus/DELETED"/>
       </genEnums>
-      <genClasses ecoreClass="idmmodel.ecore#//core/User"/>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="idmmodel.ecore#//core/IDMTypes">
+        <genEnumLiterals ecoreEnumLiteral="idmmodel.ecore#//core/IDMTypes/INT"/>
+        <genEnumLiterals ecoreEnumLiteral="idmmodel.ecore#//core/IDMTypes/STRING"/>
+        <genEnumLiterals ecoreEnumLiteral="idmmodel.ecore#//core/IDMTypes/DATE"/>
+        <genEnumLiterals ecoreEnumLiteral="idmmodel.ecore#//core/IDMTypes/BOOLEAN"/>
+        <genEnumLiterals ecoreEnumLiteral="idmmodel.ecore#//core/IDMTypes/USER"/>
+        <genEnumLiterals ecoreEnumLiteral="idmmodel.ecore#//core/IDMTypes/ORGANIZATION"/>
+      </genEnums>
+      <genClasses ecoreClass="idmmodel.ecore#//core/User">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idmmodel.ecore#//core/User/login"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference idmmodel.ecore#//core/User/work"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference idmmodel.ecore#//core/User/hasAttributes"/>
+      </genClasses>
       <genClasses image="false" ecoreClass="idmmodel.ecore#//core/Entity">
         <genOperations ecoreOperation="idmmodel.ecore#//core/Entity/getId"/>
         <genOperations ecoreOperation="idmmodel.ecore#//core/Entity/getName"/>
         <genOperations ecoreOperation="idmmodel.ecore#//core/Entity/getStatus"/>
       </genClasses>
-      <genClasses ecoreClass="idmmodel.ecore#//core/Organization"/>
+      <genClasses ecoreClass="idmmodel.ecore#//core/Organization">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference idmmodel.ecore#//core/Organization/parentOrganization"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference idmmodel.ecore#//core/Organization/has"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference idmmodel.ecore#//core/Organization/hasAttributes"/>
+        <genOperations ecoreOperation="idmmodel.ecore#//core/Organization/getLevel"/>
+        <genOperations ecoreOperation="idmmodel.ecore#//core/Organization/getHierarchyDescription"/>
+      </genClasses>
       <genClasses image="false" ecoreClass="idmmodel.ecore#//core/BasicEntity">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idmmodel.ecore#//core/BasicEntity/id"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idmmodel.ecore#//core/BasicEntity/name"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idmmodel.ecore#//core/BasicEntity/status"/>
+      </genClasses>
+      <genClasses ecoreClass="idmmodel.ecore#//core/UserOrganization">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idmmodel.ecore#//core/UserOrganization/startDate"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idmmodel.ecore#//core/UserOrganization/endDate"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference idmmodel.ecore#//core/UserOrganization/hasAttributes"/>
+      </genClasses>
+      <genClasses ecoreClass="idmmodel.ecore#//core/Attribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idmmodel.ecore#//core/Attribute/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idmmodel.ecore#//core/Attribute/type"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>
