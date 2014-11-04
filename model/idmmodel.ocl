@@ -1,9 +1,9 @@
 import 'idmmodel.ecore'
 
-package idmmodel
+package idmmodel::core
 
-context UserOrganization
-inv invariant_UserOrganizationDateValidation :
-	self.endDate.isAfter(Date::now)
+context Organization
+inv invariant_OrganizationLevelValidation :
+	(self.getLevel() >= 1 )
 
 endpackage
